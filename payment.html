@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>الدفع</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fafafa;padding:24px;text-align:center}
+    .card{background:#fff;border:1px solid #ddd;border-radius:18px;max-width:560px;width:100%;padding:22px}
+    h1{margin:0 0 10px}
+    .box{border:1px dashed #999;border-radius:14px;padding:14px;margin:14px 0;background:#fcfcfc}
+    input{width:100%;padding:12px;font-size:16px;border:1px solid #ccc;border-radius:12px;box-sizing:border-box}
+    button{width:100%;margin-top:12px;padding:12px 16px;font-size:18px;border:none;border-radius:12px;background:#111;color:#fff;cursor:pointer}
+    .tiny{font-size:12px;opacity:.65;margin-top:10px}
+    a{color:#111}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>الدفع (1$)</h1>
+    <p>حوّل <b>1$</b> بالطريقة اللي تناسبك. بعدها اكتب رقم العملية/الوقت (اختياري) واضغط تأكيد.</p>
+
+    <div class="box">
+      <div><b>زين كاش:</b> 07XXXXXXXXX</div>
+      <div><b>كي كارد:</b> XXXX-XXXX-XXXX-XXXX</div>
+      <div class="tiny">راح تبدّل الأرقام بأرقامك لاحقًا</div>
+    </div>
+
+    <input id="ref" placeholder="رقم العملية / وقت التحويل (اختياري)">
+    <button onclick="go()">تم التحويل ✅</button>
+
+    <div class="tiny"><a href="index.html">رجوع</a></div>
+  </div>
+
+<script>
+function go(){
+  const ref = encodeURIComponent(document.getElementById('ref').value || '');
+  location.href = 'nothing.html?ref=' + ref;
+}
+</script>
+</body>
+</html>
